@@ -37,6 +37,22 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun calculateBMI(weight: Float, height: Float): Float {
+        return weight / (height * height)
+    }
+
+    private fun getBMICategory(bmi: Float): String {
+        return when {
+            bmi < 18.5 -> "Underweight"
+            bmi < 24.9 -> "Normal weight"
+            bmi < 29.9 -> "Overweight"
+            else -> "Obesity"
+        }
+    }
+
+    private fun hideKeyboard() {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
 
     }
 }
