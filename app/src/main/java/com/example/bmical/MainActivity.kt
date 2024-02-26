@@ -18,6 +18,25 @@ class MainActivity : AppCompatActivity() {
         val resultTextView = findViewById<TextView>(R.id.result)
         val calculateButton = findViewById<Button>(R.id.btn)
 
+        calculateButton.setOnClickListener {
+            // Close the keyboard
+            hideKeyboard()
+
+            val weightStr = weightEditText.text.toString()
+            val heightStr = heightEditText.text.toString()
+
+            if (weightStr.isNotEmpty() && heightStr.isNotEmpty()) {
+                val weight = weightStr.toFloat()
+                val height = heightStr.toFloat() / 100 // Convert height from cm to meters
+                val bmi = calculateBMI(weight, height)
+                val bmiCategory = getBMICategory(bmi)
+                resultTextView.text = "Your BMI: $bmi\nCategory: $bmiCategory"
+            } else {
+                resultTextView.text = "Please enter both weight and height"
+            }
+        }
+    }
+
 
     }
 }
