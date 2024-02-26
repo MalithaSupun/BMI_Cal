@@ -12,5 +12,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val weightEditText = findViewById<EditText>(R.id.weight)
+        val heightEditText = findViewById<EditText>(R.id.height)
+        val resultTextView = findViewById<TextView>(R.id.result)
+        val calculateButton = findViewById<Button>(R.id.btn)
+
+
     }
 }
