@@ -24,6 +24,7 @@
         android:layout_marginHorizontal="30dp"
         />
 
+
     <EditText
         android:id="@+id/weight"
         android:layout_width="match_parent"
@@ -34,6 +35,8 @@
         android:padding="12dp"
         android:background="@drawable/edit_bg"
         />
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -80,5 +83,6 @@
         android:textSize="50sp"
         android:textColor="#000"
         />
+
 
 </LinearLayout>
